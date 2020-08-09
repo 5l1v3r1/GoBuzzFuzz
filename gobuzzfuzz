@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in $(cat $1);do 
+    gobuster dir -w $2 -u $i -e -o tmp &>/dev/null;
+    cat tmp | tee fuzz;
+    done
+
+rm tmp

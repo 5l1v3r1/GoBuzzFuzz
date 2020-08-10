@@ -2,7 +2,7 @@
 
 for i in $(cat $1);do 
     gobuster dir -w $2 -u $i -e -o tmp;
-    cat tmp | tee fuzz;
+    cat tmp >> fuzz;
+    echo ""
+    echo ""
     done
-
-rm tmp
